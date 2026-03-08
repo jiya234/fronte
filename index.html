@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zenithra Hardware Interface</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="bootScreen">
+
+<h1>ZENITHRA</h1>
+<p id="bootText">OPENING THE VAULT...</p>
+
+</div>
+
+
+<div id="dashboard">
+
+<header>
+
+<h2>ZENITHRA TECH</h2>
+<p>HARDWARE INTERFACE — VAULT ACCESS TERMINAL</p>
+
+<div class="status">
+SYSTEM ONLINE
+<span id="clock"></span>
+</div>
+
+</header>
+
+
+<section class="panel">
+
+<h3>Video Feed</h3>
+
+<div class="screen">
+<video id="video" autoplay></video>
+<p id="cameraStatus">OFFLINE</p>
+</div>
+
+<button onclick="toggleCamera()">▶ Start Camera</button>
+
+</section>
+
+
+<section class="panel">
+
+<h3>Voice Transcription</h3>
+
+<div id="speechOutput">// Awaiting voice input...</div>
+
+<button onclick="toggleVoice()">▶ Start Listening</button>
+<button onclick="clearText()">⌫ Clear</button>
+
+</section>
+
+
+<section class="panel">
+
+<h3>Bluetooth</h3>
+
+<p id="deviceName">⬡ No device connected</p>
+
+<button onclick="connectBluetooth()">⬡ Scan for Devices</button>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
