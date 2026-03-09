@@ -1,93 +1,272 @@
-body{
+body {
 
-background:#06090f;
-color:#18e0c4;
-font-family: "Courier New", monospace;
-margin:0;
-padding:40px;
+    /* MAIN HOMEPAGE BACKGROUND */
 
+    background:#6A8595;
+
+    color:#1C282E;
+
+    font-family:"Courier New", monospace;
+
+    margin:0;
+    padding:0;
+
+    overflow-x:hidden;
 }
+
+
+/* BOOT SCREEN */
 
 #bootScreen{
 
 position:fixed;
-width:100%;
-height:100vh;
 top:0;
 left:0;
-background:#06090f;
+width:100%;
+height:100vh;
+
+background:#1C282E;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-font-size:22px;
+
+z-index:1000;
 
 }
+
+
+/* BOOT TEXT */
+
+#bootText{
+
+display:flex;
+gap:18px;
+
+font-size:56px;
+
+letter-spacing:6px;
+
+font-family:'Limelight', cursive;
+
+text-transform:uppercase;
+
+color:#FFFFFF;
+
+text-shadow:0 4px 12px rgba(0,0,0,0.5);
+
+}
+
+
+#bootText span{
+
+opacity:0;
+transform:translateY(80px) scale(.6);
+
+animation:vaultWord .8s forwards;
+
+}
+
+#bootText span:nth-child(1){animation-delay:.3s;}
+#bootText span:nth-child(2){animation-delay:1s;}
+#bootText span:nth-child(3){animation-delay:1.7s;}
+
+@keyframes vaultWord{
+
+0%{opacity:0; transform:translateY(80px) scale(.6);}
+60%{opacity:1; transform:translateY(-10px) scale(1.1);}
+100%{opacity:1; transform:translateY(0) scale(1);}
+
+}
+
+
+/* DASHBOARD */
 
 #dashboard{
 
 display:none;
 
+max-width:1100px;
+margin:auto;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+padding:40px;
+
+opacity:0;
+transform:translateY(40px);
+
+transition:all .7s ease;
+
 }
+
+#dashboard.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+
+/* HEADER */
 
 header{
 
-border-bottom:1px solid #18e0c4;
+grid-column:1/span 2;
+
+border-bottom:1px solid #4F636E;
+
 padding-bottom:20px;
-margin-bottom:30px;
-
-}
-
-.panel{
-
-border:1px solid #18e0c4;
-padding:20px;
-margin-bottom:25px;
-
-}
-
-.screen{
-
-height:200px;
-border:1px solid #18e0c4;
-display:flex;
-align-items:center;
-justify-content:center;
 margin-bottom:10px;
 
 }
 
-video{
+header h1{
+
+font-family:'Limelight', cursive;
+
+font-size:40px;
+
+letter-spacing:3px;
+
+color:#FFFFFF;
+
+margin:0;
+
+}
+
+
+/* PANELS / CARDS */
+
+.panel{
+
+background:#E6EDF2;
+
+border:1px solid #A1AFBA;
+
+padding:25px;
+
+border-radius:12px;
+
+box-shadow:0 8px 18px rgba(0,0,0,0.15);
+
+}
+
+
+/* CARD HEADINGS */
+
+.panel h3{
+
+color:#1C282E;
+
+font-size:20px;
+
+margin-top:0;
+
+}
+
+
+/* CAMERA PANEL FULL WIDTH */
+
+.camera{
+
+grid-column:1/span 2;
+
+}
+
+
+/* CAMERA SCREEN */
+
+.screen{
+
+width:100%;
+height:350px;
+
+/* LIGHTER CAMERA BACKGROUND */
+
+background:#c1d1dd;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:8px;
+
+border:2px solid #A1AFBA;
+
+}
+
+/* VIDEO */
+
+#video{
 
 width:100%;
 height:100%;
+
 object-fit:cover;
 
 }
 
+
+/* BUTTONS */
+
 button{
 
-background:transparent;
-border:1px solid #18e0c4;
-color:#18e0c4;
-padding:10px;
+width:100%;
+
+background:#273F4B;
+
+border:none;
+
+color:#FFFFFF;
+
+padding:14px;
+
+font-weight:bold;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
 cursor:pointer;
-margin-right:10px;
+
+margin-top:15px;
+
+border-radius:8px;
+
+transition:.25s;
 
 }
 
 button:hover{
 
-background:#18e0c4;
-color:#06090f;
+background:#2B4C5D;
 
 }
 
+
+/* SPEECH OUTPUT */
+
 #speechOutput{
 
-border:1px solid #18e0c4;
-padding:10px;
+border:1px solid #A1AFBA;
+
+padding:15px;
+
 margin-bottom:10px;
-min-height:40px;
+
+min-height:50px;
+
+border-radius:8px;
+
+background:#F2F6F9;
+
+line-height:1.6;
+
+color:#1C282E;
 
 }

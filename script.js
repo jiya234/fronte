@@ -39,7 +39,17 @@ cameraOn = false;
 
 }catch(err){
 
-alert("Camera permission denied or not available");
+if(err.name === "NotAllowedError"){
+alert("Camera permission denied");
+}
+
+else if(err.name === "NotFoundError"){
+alert("No camera device found");
+}
+
+else{
+alert("Camera error: " + err.message);
+}
 
 }
 
@@ -164,7 +174,13 @@ window.onload = function(){
 setTimeout(function(){
 
 document.getElementById("bootScreen").style.display="none";
-document.getElementById("dashboard").style.display="block";
+
+const dash = document.getElementById("dashboard");
+dash.style.display="grid";
+
+setTimeout(()=>{
+dash.classList.add("show");
+},50);
 
 },2500);
 

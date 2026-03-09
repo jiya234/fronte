@@ -1,75 +1,117 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<title>Zenithra Hardware Interface</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title></title>
+
+<link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+
+<!-- BOOT SCREEN -->
+
 <div id="bootScreen">
 
-<h1>ZENITHRA</h1>
-<p id="bootText">OPENING THE VAULT...</p>
+<div id="bootText">
+
+<span>OPENING</span>
+<span>THE</span>
+<span>VAULT</span>
 
 </div>
 
+</div>
+
+
+
+<!-- DASHBOARD -->
 
 <div id="dashboard">
 
 <header>
-
-<h2>ZENITHRA TECH</h2>
-<p>HARDWARE INTERFACE — VAULT ACCESS TERMINAL</p>
-
-<div class="status">
-SYSTEM ONLINE
-<span id="clock"></span>
-</div>
-
+<h1>ZENITHRA HARDWARE DASHBOARD</h1>
 </header>
 
 
-<section class="panel">
 
-<h3>Video Feed</h3>
+<!-- CAMERA PANEL -->
+
+<div class="panel camera">
+
+<h3>CAMERA FEED</h3>
 
 <div class="screen">
-<video id="video" autoplay></video>
-<p id="cameraStatus">OFFLINE</p>
+
+<video id="video" autoplay muted></video>
+
+<div id="liveBadge" style="
+position:absolute;
+top:10px;
+left:10px;
+background:#8F755E;
+color:#231A16;
+padding:3px 8px;
+font-size:12px;
+display:none;
+border-radius:3px;">
+LIVE
 </div>
 
-<button onclick="toggleCamera()">▶ Start Camera</button>
+</div>
 
-</section>
-
-
-<section class="panel">
-
-<h3>Voice Transcription</h3>
-
-<div id="speechOutput">// Awaiting voice input...</div>
-
-<button onclick="toggleVoice()">▶ Start Listening</button>
-<button onclick="clearText()">⌫ Clear</button>
-
-</section>
-
-
-<section class="panel">
-
-<h3>Bluetooth</h3>
-
-<p id="deviceName">⬡ No device connected</p>
-
-<button onclick="connectBluetooth()">⬡ Scan for Devices</button>
-
-</section>
+<button id="cameraBtn" onclick="toggleCamera()">Start Camera</button>
 
 </div>
+
+
+
+<!-- VOICE PANEL -->
+
+<div class="panel">
+
+<h3>VOICE RECOGNITION</h3>
+
+<p id="status">Status: Idle</p>
+
+<div id="speechOutput">
+No output yet.
+</div>
+
+<button id="voiceBtn" onclick="toggleVoice()">Listen</button>
+
+</div>
+
+
+
+<!-- BLUETOOTH PANEL -->
+
+<div class="panel">
+
+<h3>BLUETOOTH</h3>
+
+<p id="btStatus">Disconnected</p>
+
+<p id="deviceName">No Device</p>
+
+<button onclick="connectBluetooth()">Scan</button>
+
+</div>
+
+
+</div>
+
 
 <script src="script.js"></script>
 
 </body>
 </html>
+```
