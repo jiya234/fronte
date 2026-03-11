@@ -173,7 +173,13 @@ window.onload = function(){
 
 setTimeout(function(){
 
-document.getElementById("bootScreen").style.display="none";
+const boot = document.getElementById("bootScreen");
+
+boot.style.transition = "opacity 1s ease";
+boot.style.opacity = "0";
+
+setTimeout(()=>{
+boot.style.display="none";
 
 const dash = document.getElementById("dashboard");
 dash.style.display="grid";
@@ -182,6 +188,9 @@ setTimeout(()=>{
 dash.classList.add("show");
 },50);
 
+},1000);
+
 },2500);
 
 }
+
